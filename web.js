@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 
 var require('fs');
 
-var readTxtFile(file) 
+var readTxtFile = function(file) 
 {
    buffer = fs.readFileSync(file);
    return buffer.toString('utf8');
