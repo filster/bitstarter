@@ -2,8 +2,16 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
+var require('fs');
+
+var readTxtFile(file) 
+{
+   buffer = fs.readFileSync(file);
+   return buffer.toString('utf8');
+};
+
 app.get('/', function(request, response) {
-  response.send('Hello World 2!');
+  response.send(readTxtFile('index.html'));
 });
 
 var port = process.env.PORT || 5000;
